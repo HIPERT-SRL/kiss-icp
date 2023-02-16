@@ -1,8 +1,6 @@
-BasedOnStyle: Google
-UseTab: Never
+BasedOnStyle: Mozilla
 IndentWidth: 4
-AccessModifierOffset: -4
+TabWidth: 4
 ColumnLimit: 100
-BinPackParameters: false
-SortIncludes: true
-Standard: c++17
+AlwaysBreakAfterReturnType: None
+AlwaysBreakAfterDefinitionReturnType: None
