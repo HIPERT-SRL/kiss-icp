@@ -45,11 +45,12 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_package()
-
 # ROS2 node
 add_executable(odometry_node src/Utils.cpp src/OdometryServer.cpp src/odometry_node.cpp)
 target_include_directories(odometry_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(odometry_node kiss_icp::pipeline)
 ament_target_dependencies(odometry_node rclcpp sensor_msgs nav_msgs std_msgs tf2_ros)
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}/)
 install(TARGETS odometry_node DESTINATION lib/${PROJECT_NAME})
+
+ament_package()
